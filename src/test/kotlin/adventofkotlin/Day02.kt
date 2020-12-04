@@ -23,7 +23,7 @@ class Day02 : Advent2020() {
     fun run01() {
         val count = passwords.filter { it.isValid1() }.count()
 
-        assertEquals(count, 629)
+        assertEquals(count, 628)
     }
 
     private fun Password.isValid1(): Boolean {
@@ -33,10 +33,9 @@ class Day02 : Advent2020() {
 
     @Test
     fun run02() {
-        val count = passwords
-            .filter { it.isValid2() }
-            .count()
-        println(count)
+        val count = passwords.filter { it.isValid2() }.count()
+
+        assertEquals(count, 705)
     }
 
     private fun Password.isValid2(): Boolean {
