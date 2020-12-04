@@ -33,19 +33,19 @@ class Day04 : Advent2020() {
                 .map { s -> s.split(" ") }
                 .map { fields -> fields
                         .map { field -> field.split(":") }
-                        .filter {
+                        .map {
                             var result = false
-                            if (it[0].contains("iyr")) result = Integer.parseInt(it[1]) in 2010..2020
-                            if (it[0].contains("byr")) result = Integer.parseInt(it[1]) in 1920..2002
-                            if (it[0].contains("eyr")) result = Integer.parseInt(it[1]) in 2020..2030
-                            if (it[0].contains("hgt")) result = validatehgt(it[1])
-                            if (it[0].contains("hcl")) result = it[1].matches(Regex("^#[a-f 0-9]{7}$"))
-                            if (it[0].contains("ecl")) result = it[1].matches(Regex("^amb$|^blu$|^brn$|^gry$|^grn$|^hzl$|^oth$"))
-                            if (it[0].contains("pid")) result = it[1].matches(Regex("^[0-9]{9}$"))
-                            if (it[0].contains("cid")) result = true
+                            if (it[0] == "iyr") result = Integer.parseInt(it[1]) in 2010..2020
+                            if (it[0] == "byr") result = Integer.parseInt(it[1]) in 1920..2002
+                            if (it[0] == "eyr") result = Integer.parseInt(it[1]) in 2020..2030
+                            if (it[0] == "hgt") result = validatehgt(it[1])
+                            if (it[0] == "hcl") result = it[1].matches(Regex("^#[a-f 0-9]{6}$"))
+                            if (it[0] == "ecl") result = it[1].matches(Regex("^amb$|^blu$|^brn$|^gry$|^grn$|^hzl$|^oth$"))
+                            if (it[0] == "pid") result = it[1].matches(Regex("^[0-9]{9}$"))
+                            if (it[0] == "cid") result = true
                             result}
                 }
-                .filter { it.size in 6..7  }
+                .filter { !it.contains(false) }
 
         print(result.size)
     }
