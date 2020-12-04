@@ -14,7 +14,7 @@ class Day03 : Advent2020() {
     }
 
     @Test
-    fun run01() {
+    fun run() {
         print(
             calcTreesRek(0, 0, 1, 1).toBigInteger()
                     * calcTreesRek(0, 0, 1, 3).toBigInteger()
