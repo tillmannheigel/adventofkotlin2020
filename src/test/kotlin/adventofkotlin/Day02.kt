@@ -3,6 +3,7 @@ package adventofkotlin
 import adventofkotlin.data.Password
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 class Day02 : Advent2020() {
 
@@ -20,10 +21,9 @@ class Day02 : Advent2020() {
 
     @Test
     fun run01() {
-        val count = passwords
-            .filter { it.isValid1() }
-            .count()
-        print(count)
+        val count = passwords.filter { it.isValid1() }.count()
+
+        assertEquals(count, 629)
     }
 
     private fun Password.isValid1(): Boolean {
