@@ -2,7 +2,6 @@ package adventofkotlin
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import java.lang.Exception
 import java.util.*
 import java.util.regex.Pattern
 
@@ -59,8 +58,8 @@ class Day04 : Advent2020() {
         }
         val inch = entry.contains("in")
         if (inch) {
-            val sizeInCm = Integer.parseInt(entry.subSequence(0, entry.length - 2).toString())
-            return sizeInCm in 59..76
+            val sizeInInch = Integer.parseInt(entry.subSequence(0, entry.length - 2).toString())
+            return sizeInInch in 59..76
         }
         return false
     }
