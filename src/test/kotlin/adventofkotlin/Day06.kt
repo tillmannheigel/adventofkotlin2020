@@ -19,7 +19,7 @@ class Day06 : Advent2020() {
     }
 
     private fun readLines01(): ArrayList<String> {
-        var lines = ArrayList<String>();
+        val lines = ArrayList<String>();
 
         val scan = Scanner(this::class.java.getResourceAsStream("testinput06"))
         scan.useDelimiter(Pattern.compile("\n\n"))
