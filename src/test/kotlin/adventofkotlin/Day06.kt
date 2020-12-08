@@ -8,16 +8,6 @@ import kotlin.collections.HashMap
 class Day06 : Advent2020() {
 
 
-    @Test
-    fun run01() {
-        var lines = readLines01()
-        val anserweredByAnyone = lines
-            .map { it.toSet().count() }
-
-
-        print(anserweredByAnyone.count())
-    }
-
     private fun readLines01(): ArrayList<String> {
         val lines = ArrayList<String>();
 
@@ -28,7 +18,15 @@ class Day06 : Advent2020() {
             lines.add(line)
         }
         return lines
+    }
 
+    @Test
+    fun run01() {
+        var lines = readLines01()
+        val anserweredByAnyone = lines
+                .map { it.toSet().count() }
+
+        print(anserweredByAnyone.count())
     }
 
 
@@ -36,9 +34,9 @@ class Day06 : Advent2020() {
     fun run02() {
 
         val answeredByEveryone = readLines()
-            .map { group ->
-                val hashMap = HashMap<Char, Int>()
-                group.forEach { person ->
+                .map { group ->
+                    val hashMap = HashMap<Char, Int>()
+                    group.forEach { person ->
                     person.forEach { answer ->
                         if (!hashMap.contains(answer))
                             hashMap[answer] = group.count { it.contains(answer) }
