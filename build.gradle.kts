@@ -10,6 +10,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     testImplementation(kotlin("test-junit5"))
     testImplementation("commons-io:commons-io:2.8.0")
 }
